@@ -1,7 +1,8 @@
 /* Centralizando o conteúdo na tela com flexbox */
 body, html {
-    height: 80%;
+    height: 100vw;
     margin-top: 1%;
+    margin-bottom: 2%;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #818181;
