@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Medicamentos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for background and effects -->
+    <style>
+        body {
+            background: linear-gradient(135deg, black, green, white);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .conteudo {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #5cb85c;
+            color: white;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+        
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        /* Estilização da lista */
+        .list-group {
+            padding-left: 0; /* Remove o padding padrão da lista */
+        }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-bottom: 5px;
+            padding: 10px;
+            list-style: none; /* Remove o estilo de lista padrão */
+        }
+
+        .list-group-item::before {
+            content: "●";
+            color: green;  /* Cor verde para o marcador */
+            font-size: 1.5rem; /* Tamanho maior para o marcador */
+            margin-right: 15px; /* Espaçamento entre o marcador e o texto */
+        }
+
+        .list-group-item:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.02);
+        }
+
+        .delete-btn {
+            background-color: #ff3333; /* Vermelho vibrante */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .delete-btn:hover {
+            background-color: #ff1a1a; /* Vermelho mais vibrante no hover */
+        }
+
+        .form-group {
+            text-align: left; /* Mantém os labels e inputs alinhados à esquerda */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="conteudo">
+            <h1>Controle de Medicamentos</h1>
+        
+            <form id="medicationForm">
+                <div class="form-group">
+                    <label for="name">Nome do medicamento:</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Digite o nome do medicamento" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="dosage">Dosagem:</label>
+                    <input type="text" id="dosage" name="dosage" class="form-control" placeholder="Digite a dosagem" required>
+                </div>
+                
+                <button type="submit" class="btn">Adicionar Medicamento</button>
+            </form>
+            
+            <h2 class="mt-5">Lista de Medicamentos</h2>
+            <ul id="medicationList" class="list-group mt-3"></ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

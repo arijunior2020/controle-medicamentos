@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Medicamentos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center">
         <div class="conteudo">
             <h1>Controle de Medicamentos</h1>
         
             <form id="medicationForm">
-                <label for="name">Nome do medicamento:</label>
-                <input type="text" id="name" name="name" required><br>
+                <div class="form-group">
+                    <label for="name">Nome do medicamento:</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Digite o nome do medicamento" required>
+                </div>
         
-                <label for="dosage">Dosagem:</label>
-                <input type="text" id="dosage" name="dosage" required><br>
+                <div class="form-group">
+                    <label for="dosage">Dosagem:</label>
+                    <input type="text" id="dosage" name="dosage" class="form-control" placeholder="Digite a dosagem" required>
+                </div>
                 
-                <button type="submit">Adicionar Medicamento</button>
+                <button type="submit" class="btn">Adicionar Medicamento</button>
             </form>
             
-            <h2>Lista de Medicamentos</h2>
-            <ul id="medicationList"></ul>
+            <h2 class="mt-5">Lista de Medicamentos</h2>
+            <ul id="medicationList" class="list-group mt-3"></ul>
         </div>
     </div>
 
+    <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

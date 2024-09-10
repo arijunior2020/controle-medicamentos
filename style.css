@@ -1,100 +1,85 @@
-/* Centralizando o conteúdo na tela com flexbox */
-body, html {
-    height: 80%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #818181;
-}
-
-.container {
+body {
+    background: linear-gradient(135deg, black, green, white);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
-    height: 100%;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .conteudo {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Estilos para os títulos */
 h1, h2 {
+    text-align: center;
     color: #333;
 }
 
-/* Estilizando o formulário */
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input {
-    padding: 8px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-/* Estilizando o botão */
-button {
-    padding: 10px 20px;
+.btn {
     background-color: #5cb85c;
     color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+.btn:hover {
     background-color: #4cae4c;
-}
-
-/* Estilizando a lista de medicamentos */
-ul {
-    list-style-type: none;
-    padding: 0;
 }
 
 li {
-    background-color: #fff;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+}
+
+/* Estilização da lista */
+.list-group {
+    padding-left: 0; /* Remove o padding padrão da lista */
+}
+
+.list-group-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 5px;
+    padding: 10px;
+    list-style: none; /* Remove o estilo de lista padrão */
 }
 
-li:hover {
-    background-color: #4cae4c;
+.list-group-item::before {
+    content: "●";
+    color: green;  /* Cor verde para o marcador */
+    font-size: 1.5rem; /* Tamanho maior para o marcador */
+    margin-right: 15px; /* Espaçamento entre o marcador e o texto */
 }
 
-/* Botão de deletar medicamento */
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
 .delete-btn {
-    background-color: #d9534f;
+    background-color: #ff3333; /* Vermelho vibrante */
     color: white;
-    padding: 5px 10px;
     border: none;
+    padding: 5px 10px;
     border-radius: 4px;
-    cursor: pointer;
 }
 
 .delete-btn:hover {
-    background-color: #c9302c;
+    background-color: #ff1a1a; /* Vermelho mais vibrante no hover */
+}
+
+.form-group {
+    text-align: left; /* Mantém os labels e inputs alinhados à esquerda */
 }
