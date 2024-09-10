@@ -18,8 +18,12 @@ document.getElementById('medicationForm').addEventListener('submit', async funct
         }
         
         const result = await response.json();
-        alert(result);
-        loadMedications();  // Atualiza a lista após adicionar
+        
+        // Corrigir o alert para exibir o texto corretamente
+        alert(result.body || 'Medicamento adicionado com sucesso!');
+        
+        // Atualiza a lista de medicamentos após adicionar
+        loadMedications();
     } catch (error) {
         console.error('Erro ao adicionar medicamento:', error);
         alert('Ocorreu um erro ao adicionar o medicamento.');
@@ -31,10 +35,8 @@ async function loadMedications() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        // Acessa o array de medicamentos no campo 'body'
-        const medications = data.body;  // Acessa diretamente o campo 'body' do objeto
+        const medications = data.body;
 
-        // Verificar se a resposta da API é um array
         if (!Array.isArray(medications)) {
             console.error('A resposta não é um array:', medications);
             alert('Erro ao carregar medicamentos. Resposta inesperada.');
@@ -78,7 +80,7 @@ async function deleteMedication(id) {
         }
 
         const result = await response.json();
-        alert(result);
+        alert(result.body || 'Medicamento excluído com sucesso!');
     } catch (error) {
         console.error('Erro ao excluir medicamento:', error);
         alert('Erro ao excluir o medicamento.');
