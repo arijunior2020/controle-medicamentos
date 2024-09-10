@@ -52,9 +52,48 @@ input {
 button {
     padding: 10px 20px;
     background-color: #5cb85c;
-    border-radius: 5px;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Estilizando a lista de medicamentos */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botão de deletar medicamento */
+.delete-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
 }
