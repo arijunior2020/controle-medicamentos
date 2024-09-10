@@ -29,7 +29,10 @@ document.getElementById('medicationForm').addEventListener('submit', async funct
 async function loadMedications() {
     try {
         const response = await fetch(apiUrl);
-        const medications = await response.json();
+        const data = await response.json();
+
+        // Acessa o array de medicamentos no campo 'body'
+        const medications = data.body;  // Acessa diretamente o campo 'body' do objeto
 
         // Verificar se a resposta da API é um array
         if (!Array.isArray(medications)) {
