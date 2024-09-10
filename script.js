@@ -1,5 +1,6 @@
 const apiUrl = 'https://1et9sjodok.execute-api.sa-east-1.amazonaws.com/dev';  // Substitua pela sua URL do API Gateway
 
+// Função para adicionar medicamentos
 document.getElementById('medicationForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     
@@ -7,10 +8,15 @@ document.getElementById('medicationForm').addEventListener('submit', async funct
     const dosage = document.getElementById('dosage').value;
 
     try {
+        // Cria o body com o formato esperado
+        const requestBody = {
+            body: JSON.stringify({ name, dosage })
+        };
+
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, dosage })
+            body: JSON.stringify(requestBody)
         });
 
         if (!response.ok) {
@@ -19,7 +25,6 @@ document.getElementById('medicationForm').addEventListener('submit', async funct
         
         const result = await response.json();
         
-        // Corrigir o alert para exibir o texto corretamente
         alert(result.message || 'Medicamento adicionado com sucesso!');
         
         // Atualiza a lista de medicamentos após adicionar
@@ -30,12 +35,13 @@ document.getElementById('medicationForm').addEventListener('submit', async funct
     }
 });
 
+// Função para carregar medicamentos
 async function loadMedications() {
     try {
-        const response = await fetch(apiUrl);  // Usando diretamente o / como endpoint
+        const response = await fetch(apiUrl);
         const data = await response.json();
 
-        const medications = data.body || data;  // Verifique se a resposta está dentro de 'body'
+        const medications = data.body || data;  // Verifica se a resposta está dentro de 'body'
 
         if (!Array.isArray(medications)) {
             console.error('A resposta não é um array:', medications);
@@ -67,12 +73,18 @@ async function loadMedications() {
     }
 }
 
+// Função para deletar medicamentos
 async function deleteMedication(id) {
     try {
+        // Cria o body com o formato esperado para o DELETE
+        const requestBody = {
+            body: JSON.stringify({ id })
+        };
+
         const response = await fetch(apiUrl, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id })
+            body: JSON.stringify(requestBody)
         });
 
         if (!response.ok) {
