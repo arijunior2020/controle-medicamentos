@@ -20,22 +20,22 @@ document.getElementById('medicationForm').addEventListener('submit', async funct
         const result = await response.json();
         
         // Corrigir o alert para exibir o texto corretamente
-        alert(result.body || 'Medicamento adicionado com sucesso!');
+        alert(result.message || 'Medicamento adicionado com sucesso!');
         
         // Atualiza a lista de medicamentos após adicionar
         loadMedications();
     } catch (error) {
         console.error('Erro ao adicionar medicamento:', error);
-        alert('Ocorreu um erro ao adicionar o medicamento.');
+        alert(`Ocorreu um erro ao adicionar o medicamento: ${error.message}`);
     }
 });
 
 async function loadMedications() {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl);  // Usando diretamente o / como endpoint
         const data = await response.json();
 
-        const medications = data.body;
+        const medications = data.body || data;  // Verifique se a resposta está dentro de 'body'
 
         if (!Array.isArray(medications)) {
             console.error('A resposta não é um array:', medications);
@@ -80,10 +80,10 @@ async function deleteMedication(id) {
         }
 
         const result = await response.json();
-        alert(result.body || 'Medicamento excluído com sucesso!');
+        alert(result.message || 'Medicamento excluído com sucesso!');
     } catch (error) {
         console.error('Erro ao excluir medicamento:', error);
-        alert('Erro ao excluir o medicamento.');
+        alert(`Erro ao excluir o medicamento: ${error.message}`);
     }
 }
 
