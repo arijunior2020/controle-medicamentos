@@ -1,4 +1,4 @@
-const apiUrl = 'https://cunml5n8ok.execute-api.sa-east-1.amazonaws.com/dev/medications';  // Substitua pela sua URL do API Gateway
+const apiUrl = 'https://1et9sjodok.execute-api.sa-east-1.amazonaws.com/dev';  // Substitua pela sua URL do API Gateway
 
 document.getElementById('medicationForm').addEventListener('submit', async function(event) {
     event.preventDefault();
