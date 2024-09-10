@@ -9,6 +9,7 @@ Este projeto consiste em uma aplicação que permite gerenciar medicamentos (adi
 
 ## Estrutura do Projeto
 
+```
 /controle-medicamentos
 │
 ├── /lambdas
@@ -26,7 +27,7 @@ Este projeto consiste em uma aplicação que permite gerenciar medicamentos (adi
 └── /api-gateway
     ├── config.yaml
     └── cors-config.json
-
+```
 
 ### Backend (AWS Lambda)
 
@@ -193,7 +194,3 @@ O frontend foi criado utilizando HTML e JavaScript simples e hospedado no AWS Am
 
 ## Considerações Finais
 Essa aplicação é um exemplo simples de um sistema CRUD utilizando AWS Lambda, API Gateway e Amplify. Para futuras melhorias, é possível adicionar autenticação utilizando Amazon Cognito e criar uma interface mais avançada utilizando frameworks como React ou Vue.js.
-
-```
-Esse arquivo `README.md` em formato Markdown contém todas as informações necessárias para a configuração e operação do seu projeto, desde as Lambdas, até a configuração do API Gateway e do Amplify.
-```
